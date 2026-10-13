@@ -1,37 +1,40 @@
 import { Assets } from "../assets/assets"
+import { Vehicle } from "../assets/assets"
 
 
 const Featured = () => {
   return (
-    <section id="#featured" className="px-4 py-2 bg-violet-200 w-full h-auto mt-2">
-        <h2 className="text-center font-light text-lg mb-2 tracking-wide">Featured</h2>
-        <h3 className="text-center font-bold text-4xl tracking-wider mb-2">Vehicles</h3>
-        <p className="text-center font-light text-xl tracking-wider mb-4">Popular cars ready for delivery across Kenya today.</p>
-        <div className="w-10/12 h-auto px-4 py-2 mx-auto bg-gray-400 flex justify-between items-center">
-        <div className="w-96 bg-green-300 flex flex-col">
-        <img src={Assets.Hero} alt="vehicle 1" />
-        <h4 className="text-center font-semibold text-lg">Toyota Landcruiser 2025</h4>
-        <p className="text-sm font-light wrap-break-word text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quasi natus quo esse, repellendus, sint necessitatibus corporis sapiente ex dolorum fugiat officia eum, unde hic quis fugit. Tenetur, culpa natus.</p>
-        <button className="w-auto p-2 bg-red-100 text-center text-sm mt-2 cursor-pointer " type="button">Purchase</button>
+    <section id="#featured" className="px-4 py-2  w-full h-screen">
+      <h2 className="text-center font-light text-xl mt-2 lowercase">FEATURED</h2>
+      <h3 className="text-center mt-2 font-semibold text-4xl uppercase tracking-widest">Vehicles</h3>
+      <p className="font-light text-lg text-center mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, assumenda suscipit. Doloribus omnis cumque, sunt impedit.</p>
 
-        </div>
-         <div className="w-96 bg-green-300 flex flex-col">
-        <img src={Assets.Hero} alt="vehicle 1" />
-        <h4 className="text-center font-semibold text-lg">Toyota Landcruiser 2025</h4>
-        <p className="text-sm font-light wrap-break-word text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quasi natus quo esse, repellendus, sint necessitatibus corporis sapiente ex dolorum fugiat officia eum, unde hic quis fugit. Tenetur, culpa natus.</p>
-        <button className="w-auto p-2 bg-red-100 text-center text-sm mt-2 cursor-pointer " type="button">Purchase</button>
+      <div className="w-10/12 h-auto px-4 py-2  mx-auto mt-4 flex  justify-between bg-pink-300 items-center gap-2">
+        {Vehicle.map((vehicle) => (
+          <div key={vehicle.id} className=" w-3/4 bg-pink-100 px-4 py-2 rounded-md relative  hover:bg-slate-500/10 transition-all delay-100 duration-[2500ms]">
+            <img className="w-full object-fill" src= {vehicle.img} alt={vehicle.name} />
+            <h2 className="text-2xl font-bold mt-2">{vehicle.name}</h2>
+            <p className="font-light tracking-wide mt-1 mb-2">{vehicle.description}</p>
+            <div>
+              <button className="p-1 bg-green-200 w-full rounded-md font-semibold text-lg">View Details</button>
+            </div>
+            <div className="bg-slate-100/60 rounded-md w-3/4 h-auto absolute bottom-52 my-4 left-20 p-2 flex items-center justify-center gap-6 ">
+              <img className="w-6 " src={Assets.Dashboard} alt="" />
+              <p className="">{vehicle.mileage}</p>
+              <img className="w-6" src={vehicle.fuel} alt="" />
+              <p>{vehicle.cosumption}</p>
+            </div>
 
-        </div>
-         <div className="w-96 bg-green-300 flex flex-col">
-        <img src={Assets.Hero} alt="vehicle 1" />
-        <h4 className="text-center font-semibold text-lg">Toyota Landcruiser 2025</h4>
-        <p className="text-sm font-light wrap-break-word text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quasi natus quo esse, repellendus, sint necessitatibus corporis sapiente ex dolorum fugiat officia eum, unde hic quis fugit. Tenetur, culpa natus.</p>
-        <button className="w-auto p-2 bg-red-100 text-center text-sm mt-2 cursor-pointer " type="button">Purchase</button>
-
-        </div>
             
 
-        </div>
+          </div>
+        ))};
+        
+
+      </div>
+       
+
+        
         
     </section>
   )

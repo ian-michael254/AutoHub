@@ -6,7 +6,7 @@ const Navbar = () => {
     <header className="bg-emarald-800 text-slate-700 p-4">
         <nav className="flex justify-between items-center">
             <div>
-                <img className="w-16" src="" alt="...." />
+                <img className="w-20 rounded-full" src={Assets.Logo} alt="...." />
             </div>
             <div>
                 <ul className="flex items-center gap-5 w-full">
